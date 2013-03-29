@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+}
+#container {
+    width: 1280px;
+    margin: 0 auto;
+    background-color: #BBBBBB;
+}
+
+#todo-app {
+    padding-bottom: 44px;
+}
+
+.list-container {
+    width: 390px;
+    float: left;
+    margin: 6px;
+}
+
+.todo-list {
+    min-height: 100px;
+}
+
+.todo-list {
+    background-color: white;
+    height: 500px;
+}
+.todo-list li {
+    list-style: none;
+    background-color: white;
+    border: 1px solid #BBBBBB;
+    padding: 26px;
+}
+.todo-list li:hover  {
+    cursor: pointer;
+}
+#lists-container {
+    width: 1206px;
+    margin: 0 auto;
+    overflow:auto;
+}
+
+#lists-container h2 {
+    background-color: #999999;
+    margin: 0;
+    padding: 26px;
+    color: white;
+}
+
+#new-container {
+    padding-left: 43px;
+    padding-top: 55px;
+    padding-right: 70px;
+    padding-bottom: 40px;
+    overflow: auto;
+}
+
+.counter-container {
+    float: right;
+    border: 1px solid #BBBBBB;
+    background-color: white;
+    padding: 6px 24px;
+    font-size: 10px;
+    font-variant: small-caps;
+    color: #999999;
+}
+
+.counter  {
+    font-size: 16px;
+    padding-left: 15px;
+    color: black;
+}
+
+li, ul {
+    padding: 0;
+    margin: 0;
+}
+
+#form-container {
+    width: 800px;
+    float: left;
+}
+
+#form-container input[type="submit"] {
+    background-color: #363636;
+    color: white;
+    height: 30px;
+    width: 92px;
+}
+
+#form-container input[type="text"] {
+    height: 22px;
+    width: 215px;
+}

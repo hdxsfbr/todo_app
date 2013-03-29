@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TODO</title>
+    <link rel="stylesheet" href="todo.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="http://documentcloud.github.com/underscore/underscore-min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="todo.js"></script>
+
+    <!-- Templates -->
+    <script type="text/html" id="todo-list-item-template">
+        <li><%= title %></li>
+    </script>
+
+    <script type="text/html" id="todo-list-template">
+        <ul class="todo-list">
+            <% _.each(list, function(item, index){ %>
+            <%= _.template($("#todo-list-item-template").html(), {title: item.title, index: index}) %>
+            <% }) %>
+        </ul>
+    </script>
+    <script type="text/html" id="todo-app-template">
+        <div id="todo-app">
+            <div id="new-container">
+                <div id="form-container">
+                    <form action="#">
+                        <input type="text" name="new-todo-title" id="new-todo-input" onfocus="$(this).val('')" value="Enter Project Title...">
+                        <input type="submit" value="add project">
+                    </form>
+                </div>
+                <div class="counter-container"><span class="counter"><%= list.getTotalCount() %></span><br/>projects</div>
+            </div>
+            <div id="lists-container">
+                <div id="todo-container" class="list-container">
+                    <h2>To Do <div class="counter-container"><span class="counter"><%= list.getTodoCount() %></span> <br/>projects</div></h2>
+                    <%= _.template($("#todo-list-template").html(), {list: list.todoItems}) %>
+                </div>
+                <div id="in-progress-container" class="list-container">
+                    <h2>In Progress <div class="counter-container"><span class="counter"><%= list.getInProgressCount() %></span><br/>projects</div></h2>
+                    <%= _.template($("#todo-list-template").html(), {list: list.inProgressItems}) %>
+                </div>
+                <div id="completed-container" class="list-container">
+                    <h2>Done <div class="counter-container"><span class="counter"><%= list.getCompletedCount() %></span><br/>projects</div></h2>
+                    <%= _.template($("#todo-list-template").html(), {list: list.completedItems}) %>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/javascript">
+        $(function(){
+            App =  new TodoApp("container");
+        });
+
+    </script>
+</head>
+
+<body>
+
+<div id="container"></div>
+
+</body>
+</html>
