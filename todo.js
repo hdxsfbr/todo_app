@@ -52,9 +52,6 @@ var TodoApp = function(containerId) {
     this.containerId = containerId;
     this.render();
     this.hookEvents();
-    this.list.addItem(new TodoItem("item1"));
-    this.list.addItem(new TodoItem("item2"));
-    this.list.addItem(new TodoItem("item3"));
 };
 
 TodoApp.prototype.render = function() {
