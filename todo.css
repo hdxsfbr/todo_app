@@ -26,6 +26,7 @@ body {
 .todo-list {
     background-color: white;
     height: 500px;
+    overflow: auto;
 }
 .todo-list li {
     list-style: none;
